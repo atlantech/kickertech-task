@@ -2,7 +2,7 @@
 
 ### Installation:
 
-1. `git clone git@github.com:atlantech/kickertech-task.git`
+1. `git clone git@github.com:atlantech/kickertech-task.git && cd kickertech-task`
 2. `npm install`
 3. `npm start`
 
