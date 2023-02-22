@@ -31,7 +31,16 @@ router.get(
   }
 );
 
-router.get('/download-state', function(req, res) {});
+router.get('/download-state', function(req, res) {
+  const {
+    files
+  } = store.getState().files;
+
+  res.setHeader('Content-Disposition', 'attachment; filename=state.json');
+  res.setHeader('Content-Type', 'application/json');
+
+  res.send(serialize(files));
+});
 
 router.post('/scan', function(req, res) {
   store.dispatch(scan()).finally(() => res.end());
